@@ -21,3 +21,64 @@
     "prioridad": 2
   }
 ```
+
+## **Endpoints**
+
+### **GET**
+
+**Traer todos los usuarios**
+- `http://localhost:8080/api/users/`
+
+**Traer un usuario por id**
+- `http://localhost:8080/api/users/<id>`
+
+**Traer por filtro con parámetros(ejemplo: por 'prioridad')**
+- `http://localhost:8080/api/users/query?prioridad=<int>`
+
+### **POST**
+**Crear usuario**
+```
+ 
+endpoint: http://localhost:8080/api/users/
+
+- json body
+
+{
+  "nombre": "Juan",
+  "email": "juanito@haka.com",
+  "prioridad": 2
+}
+```
+**Actualizar usuario**
+
+Mismo POST pero con el id que quiere actualizar, solo cambia los valores de los otros campos
+```
+endpoint: http://localhost:8080/api/users/
+
+- json body
+
+{
+  "id": 2
+  "nombre": "Juan",
+  "email": "juanito@haka.com",
+  "prioridad": 2
+}
+```
+
+### **DELETE**
+**Eliminar usuario**
+```
+Endpoint: http://localhost:8080/api/users/<id>
+
+- Response
+
+OK: User deleted with id: <id>
+ERROR: could not delete user with id: <id>
+```
+
+
+
+
+
+
+
