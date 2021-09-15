@@ -51,7 +51,7 @@ endpoint: http://localhost:8080/api/users/
 ```
 **Actualizar usuario**
 
-Mismo POST pero con el id que quiere actualizar, solo cambia los valores de los otros campos
+El método PUT es como es POST pero con el id que quiere actualizar, solo cambia los valores de los otros campos
 ```
 endpoint: http://localhost:8080/api/users/
 
@@ -64,6 +64,22 @@ endpoint: http://localhost:8080/api/users/
   "prioridad": 2
 }
 ```
+
+Lo mismo se puede hacer con POST
+```
+endpoint: http://localhost:8080/api/users/
+
+- json body
+
+{
+  "id": 2
+  "nombre": "Juan",
+  "email": "juanito@haka.com",
+  "prioridad": 2
+}
+```
+
+### **PUT**
 
 ### **DELETE**
 **Eliminar usuario**
