@@ -1,6 +1,8 @@
 package com.example.api.models;
 
 import javax.persistence.*;
+import java.util.List;
+import java.util.Set;
 
 @Entity // sirve para trabajar conuna tabla ya creada
 @Table(name = "user")
@@ -15,6 +17,12 @@ public class UserModel {
     private String nombre;
     private String email;
     private Integer prioridad;
+
+    // @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL)
+    // @JoinColumn
+    @JoinColumn(name ="cp_fk",referencedColumnName = "id")
+    private List<BooksModel> books;
 
     public void setPrioridad(Integer prioridad){
         this.prioridad = prioridad;
@@ -46,5 +54,13 @@ public class UserModel {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public List<BooksModel> getBooks() {
+        return books;
+    }
+
+    public void setBooks(List<BooksModel> books) {
+        this.books = books;
     }
 }
