@@ -92,6 +92,15 @@ OK: User deleted with id: <id>
 ERROR: could not delete user with id: <id>
 ```
 
+**.ENV**
+
+```
+SPRING_DATASOURCE_LOCAL=jdbc:mysql://127.0.0.1:3307/<DATABASE>?createDatabaseIfNotExist=true
+SPRING_DB_USERNAME=<USER>
+SPRING_DB_PASSWORD=<PASSWORD>
+SPRING_AUTO_UPDATE_DB=update
+```
+
 
 
 
